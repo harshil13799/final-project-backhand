@@ -17,7 +17,7 @@ getallveg:function(cat_name,callback){
  
 updateProductwithoutimg:function(p_id,item,callback){
 
- return db.query('update product_tbl set p_name=?,p_price=?,p_qty=?,p_mfg=?,buffer_stock=? where p_id=?',[item.p_name,item.p_price,item.p_qty,item.p_mfg,item.buffer_stock,p_id],callback)
+ return db.query('update product_tbl set p_name=?,p_price=?,p_qty=?,p_mfxg=?,buffer_stock=? where p_id=?',[item.p_name,item.p_price,item.p_qty,item.p_mfg,item.buffer_stock,p_id],callback)
 },
  updateProduct:function(item,filename,callback){
         console.log(item,filename)
@@ -35,6 +35,10 @@ updateProductwithoutimg:function(p_id,item,callback){
 },
 getallproBycat:function(cat_name,callback){
     return db.query('select c.*,p.* from product_tbl p,cat_tbl c where c.cat_id=p.fk_cat_id and c.cat_name=?',[cat_name],callback);
+},
+getallproByName:function(p_name,callback)
+{
+    return db.query('select * from product_tbl where p_name=?',[p_name],callback)
 },
  deleteAllpro:function(item,callback){
     var delarr=[];

@@ -26,6 +26,7 @@ var supplier=require('./routes/supplier_route');
 var supplierbycat=require('./routes/supplierwithcat');
 var changepswd=require('./routes/changepswd');
 var reminder=require('./routes/productreminder');
+var productsearch=require('./routes/productsearch');
 var deleteandgetAllpro=require('./routes/deleteandgetAllpro');
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/orderdetail',orderdetail);
 app.use('/billdetail',billdetail);
 app.use('/vegGrocery',vegGrocery);
 app.use('/deleteallcat',deleteallcat);
+app.use('/productsearch',productsearch);
 app.use('/mail',mail);
 app.use('/forget',forget);
 app.use('/supplier',supplier);

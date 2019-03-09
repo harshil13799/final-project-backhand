@@ -40,6 +40,8 @@ product.getAllproduct(function (err, rows) {
        }
    });
  });
+
+
  
 router.post('/:p_id', function (req, res, next) {
   product.deleteproduct(req.params.p_id, function (err, rows) { 
