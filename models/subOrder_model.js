@@ -3,12 +3,13 @@ var suborder={
     
 addordersum:function(item,callback)
 {
+    console.log(item);
     var value=[];
     for(let i=0;i<item.length;i++)
     {
-        value[i]=[item[i].fk_o_id,item[i].fk_p_id,item[i].qty,item[i].price];
+        value[i]=[item[i].fk_o_id,item[i].fk_p_id,item[i].fk_p_qty,item[i].qty,item[i].price];
     }
-    return db.query('insert into suborder_tbl(fk_o_id,fk_p_id,qty,price) VALUES ?',[value],callback);
+    return db.query('insert into suborder_tbl(fk_o_id,fk_p_id,fk_p_qty,qty,price) VALUES ?',[value],callback);
 },
 getallsuborderdetail:function(fk_o_id,callback)
 {

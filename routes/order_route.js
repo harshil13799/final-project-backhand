@@ -37,4 +37,18 @@ router.get('/',function (req, res, next) {
     });
 });
 
+router.put('/:o_id', function (req, res, next) {
+  order.updateorder(req.params.o_id, req.body, function (err, rows) {
+
+   if (err) {
+      res.json(err);
+    }
+    else {
+      res.json(rows);
+    }
+
+
+ });
+});
+
 module.exports = router;
