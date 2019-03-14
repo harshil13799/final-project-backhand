@@ -37,7 +37,10 @@ var signup=require('./routes/signup_route');
 var reminder=require('./routes/productreminder');
 
 var sort=require('./routes/sort');
-
+var search=require('./routes/searchpro_route');
+var searchprobycat=require('./routes/searchprobycat');
+var pastorder=require('./routes/past_order_route');
+var pastorderdetail=require('./routes/past_order_detail_route');
 var deleteandgetAllpro=require('./routes/deleteandgetAllpro');
 var supplierpro=require('./routes/supplierProductName_route');
 var app = express();
@@ -82,6 +85,10 @@ app.use('/singleorderdelete',singleorderdelete);
 app.use('/profile',profile);
 app.use('/reminder',reminder);
 app.use('/supplierpro',supplierpro);
+app.use('/pastorder',pastorder);
+app.use('/searchprobycat',searchprobycat);
+app.use('/search',search);
+app.use('/pastorderdetail',pastorderdetail);
 app.use('/deleteandgetAllpro',deleteandgetAllpro);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
