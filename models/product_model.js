@@ -36,10 +36,7 @@ updateProductwithoutimg:function(p_id,item,callback){
 getallproBycat:function(cat_name,callback){
     return db.query('select c.*,p.* from product_tbl p,cat_tbl c where c.cat_id=p.fk_cat_id and c.cat_name=?',[cat_name],callback);
 },
-getallproByName:function(p_name,callback)
-{
-    return db.query('select * from product_tbl where p_name=?',[p_name],callback)
-},
+
  deleteAllpro:function(item,callback){
     var delarr=[];
     for(i=0;i<item.length;i++){

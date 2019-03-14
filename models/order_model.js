@@ -5,7 +5,7 @@ var order={
 addorder:function(item,callback){
     var sts="pending";
     var date1=new Date();
-    return db.query('insert into order_tbl values(?,?,?,?,?)',[item.o_id,item.o_price,date1,item.fk_email_id,sts],callback)
+    return db.query('insert into order_tbl values(?,?,?,?,?,?,?)',[item.o_id,item.o_price,date1,item.fk_email_id,sts,o_mode,paytm_id],callback)
 },
 getOrder:function(fk_email_id,callback){
     return db.query('select * from order_tbl where fk_email_id=?',[fk_email_id],callback)

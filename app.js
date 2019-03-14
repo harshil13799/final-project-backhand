@@ -30,6 +30,7 @@ var mail=require('./routes/mail_route');
 var profile=require('./routes/viewprofile');
 var forget=require('./routes/forgetpswd');
 var supplier=require('./routes/supplier_route');
+var productsearch=require('./routes/productsearch');
 var supplierbycat=require('./routes/supplierwithcat');
 var changepswd=require('./routes/changepswd');
 var signup=require('./routes/signup_route');
