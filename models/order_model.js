@@ -8,7 +8,7 @@ addorder:function(item,callback){
     
 
     console.log(item,"Hellooo order");
-    return db.query('insert into order_tbl(o_id,o_price,o_date,fk_email_id,fk_address,status) values(?,?,?,?,?,?)',[item.o_id,item.o_price,date1,item.fk_email_id,item.fk_address,sts],callback)
+    return db.query('insert into order_tbl(o_id,o_price,o_date,fk_email_id,fk_address,status,o_mode) values(?,?,?,?,?,?,?)',[item.o_id,item.o_price,date1,item.fk_email_id,item.fk_address,sts,item.o_mode],callback)
 },
 getOrder:function(fk_email_id,callback){
     return db.query('select * from order_tbl where fk_email_id=?',[fk_email_id],callback)
